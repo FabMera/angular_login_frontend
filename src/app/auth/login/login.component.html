@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <form [formGroup]="loginForm">
+        <p class="text-danger">{{loginError}}</p>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email </label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Ingresar email"
+          formControlName="email"
+        />
+        <div
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="text-danger p-2"
+        >
+          <div *ngIf="email.errors?.['required']">Email is required</div>
+          <div *ngIf="email.errors?.['email']">
+            El email debe tener un formato válido.
+          </div>
+        </div>
+        <div class="text-success" *ngIf="!email.errors?.['required'] && !email.errors?.['email'] ">
+          &#10003;
+        </div>
+       
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Ingresar password"
+          formControlName="password"
+        />
+        <div
+          *ngIf="password.invalid && (password.dirty || password.touched)"
+          class="text-danger p-2"
+        >
+          <div *ngIf="password.errors?.['required']">Password is required</div>
+        </div>
+        <div class="text-success" *ngIf="!password.errors?.['required']">
+            &#10003;
+          </div>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="login()">
+        Iniciar Sesion
+      </button>
+    </form>
+  </div>
+</div>
