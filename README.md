@@ -1,4 +1,5 @@
 # Frontend
+Aplicacion creada con Angular 16,representa un login con boostrap utilizando conceptos de rutas,observables,formbuilder,servicios,formulario reactivo.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
 
